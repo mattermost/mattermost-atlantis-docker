@@ -1,4 +1,4 @@
-ARG ATLANTIS_VERSION=v0.27.3
+ARG ATLANTIS_VERSION
 
 FROM ghcr.io/runatlantis/atlantis:${ATLANTIS_VERSION}
 
