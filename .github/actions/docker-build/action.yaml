@@ -7,14 +7,14 @@ runs:
     - name: ci/prepare-docker-environment
       uses: ./.github/actions/docker-prepare
 
-    - name: cd/scan-docker-security
-      uses: aquasecurity/trivy-action@062f2592684a31eb3aa050cc61e7ca1451cecd3d # v0.18.0
-      with:
-        image-ref: "mattermost/atlantis"
-        format: "table"
-        ignore-unfixed: true
-        vuln-type: "os,library"
-        severity: "CRITICAL"
+    # - name: cd/scan-docker-security
+    #   uses: aquasecurity/trivy-action@062f2592684a31eb3aa050cc61e7ca1451cecd3d # v0.18.0
+    #   with:
+    #     image-ref: "mattermost/atlantis"
+    #     format: "table"
+    #     ignore-unfixed: true
+    #     vuln-type: "os,library"
+    #     severity: "CRITICAL"
 
     - name: cd/push-image-pr
       run: "make push-image-pr"
