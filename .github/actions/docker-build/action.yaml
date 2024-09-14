@@ -21,7 +21,17 @@ runs:
       shell: bash
       if: github.event_name == 'pull_request'
 
+    - name: Set TAG variable if a tag is pushed
+      run: echo "TAG=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+      shell: bash
+      if: startsWith(github.ref, 'refs/tags/')
+
+    - name: cd/push-image-with-tag
+      run: "make push-image TAG=${TAG}"
+      shell: bash
+      if: startsWith(github.ref, 'refs/tags/')
+
     - name: cd/push-image
       run: "make push-image"
       shell: bash
-      if: github.event_name != 'pull_request'
+      if: github.event_name != 'pull_request' && !startsWith(github.ref, 'refs/tags/')
