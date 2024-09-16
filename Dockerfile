@@ -11,6 +11,9 @@ RUN apk --no-cache add \
 	aws-cli \
 	&& rm -rf /var/cache/apk/*
 
+RUN mkdir ~/.ssh || true \
+    ssh-keyscan -T 240 $GIT_HOST >> ~/.ssh/known_hosts
+
 USER atlantis
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["server"]
