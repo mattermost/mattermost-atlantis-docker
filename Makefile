@@ -1,4 +1,4 @@
-ATLANTIS_VERSION ?= v0.27.3
+ATLANTIS_VERSION ?= v0.29.0
 MATTERMOST_ATLANTIS_IMAGE ?= mattermost/atlantis:test
 PLATFORMS ?= linux/amd64,linux/arm64
 MATTERMOST_ATLANTIS_REPO=mattermost/atlantis
