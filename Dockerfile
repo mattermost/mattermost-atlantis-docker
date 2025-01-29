@@ -6,6 +6,7 @@ USER root
 
 RUN apk --no-cache add \
     sed \
+    openssl \
     jq~=1 \
     yq~=4 \
     kubectl~=1 \
