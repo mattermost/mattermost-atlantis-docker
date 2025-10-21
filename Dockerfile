@@ -13,6 +13,7 @@ RUN apk --no-cache add \
 	aws-cli \
 	python3 \
 	py3-pip \
+	zip \
 	&& rm -rf /var/cache/apk/*
 
 USER atlantis
