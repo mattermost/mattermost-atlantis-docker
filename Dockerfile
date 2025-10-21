@@ -12,7 +12,7 @@ RUN apk --no-cache add \
     kubectl~=1 \
 	aws-cli \
 	python3 \
-	pip \
+	py3-pip \
 	&& rm -rf /var/cache/apk/*
 
 USER atlantis
